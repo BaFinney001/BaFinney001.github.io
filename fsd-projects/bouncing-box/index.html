@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <link rel="stylesheet" href="bb.css" />
     <meta charset="utf-8" />
     <title>Bouncing Box</title>
     <script src="jquery.min.js"></script>
@@ -8,7 +9,7 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        background-color: rgb(0, 255, 255);
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -23,7 +24,7 @@
         height: 100vh;
       }
     </style>
-    <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->  
   </head>
 
   <body class="board">
@@ -73,22 +74,23 @@
         var points = 0;
         var speed = 10;
 
-
         /**
          * This Function will be called 20 times/second.
          * Each time it is called, it should move the Box to a new location.
          * If the box drifts off the screen, turn it around!
          */
-        function update() {moveBoxTo(positionX); // Box stays at starting position
-          positionX = positionX + 10; // Adds 10 to positionX
-          positionX += 10; // increasees positionX by 10
+        function update() {
+          moveBoxTo(positionX); // Box stays at starting position
+          // positionX = positionX + 10; // Adds 10 to positionX
+          // positionX += 10; // increasees positionX by 10
           positionX = positionX + speed;
           if (positionX > boardWidth) {
-            speed = speed * -1;
+          speed = speed * -1;
           }
-            else if (positionX < 0) {
-              speed = speed *= -1;
-        }
+          else if (positionX < 0) {
+          speed *= -1;
+
+          }
 
       }
 
@@ -99,12 +101,12 @@
          * - increase the speed
          * - move the box to the left side of the screen.
          */
-        function handleBoxClick() {positionX = 0;
+        function handleBoxClick() {
+          positionX = 0;
           changeBoxText(points);
           points = points + 1; // Adds 1 to points
           // points++; // increases points by 1
           speed = 3 * points + 10;
-
 
         }
 
