@@ -18,9 +18,53 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
+    var hitZoneSize = 25;
+    var damageFromObstacle = 10;
+    var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+    sawBladeHitZone.x = 400;
+    sawBladeHitZone.y = 100;
+    game.addGameItem(sawBladeHitZone);
+    var obstacleImage = draw.bitmap("img/sawblade.png");
+    sawBladeHitZone.addChild(obstacleImage);
+    var createSawBlade = sawBladeHitZone.x + sawBladeHitZone.y
+   function createEnemy(x,y) {
+    createEnemy(400, groundY - 10);
+    createEnemy(800, groundY - 100);
+    createEnemy( 1200, groundY - 50);
+     var enemy = game.creteGameItem("enemy", 25);
+    var redSquare = draw.rect(50, 50, "red");
+    redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild(redSquare);
+    enemy.x = 400;
+    enemy.y = groundY - 50;
+    game.addGameItem(enemy);
+    enemy.velocityX = 1;
+    enemy.rotationalVelocity = 5;
+    enemy.onPlayCollision = function() {
+      game.changeIntegrity(-10)
+    };
+    function onProjectileCollision () {
+    game.increaseScore(100);
+    enemy.fadeOut();
+    }
+   }
+   function createReward() {
 
-    
+   }
+   function createMarker() {
 
+   }
+   var levelData = {
+      name: "Robot Romp",
+      number: 1,
+      speed: -3,
+      gameItems: {
+        type: "sawblade", x: 400, y, groundY,
+        type: "sawblade", x: 600, y: groundY,
+        type: "sawblade", x: 900, y: groundY,
+      }
+   }
     function startLevel() {
       // TODO 13 goes below here
 
