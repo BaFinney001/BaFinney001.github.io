@@ -55,19 +55,42 @@ var runLevels = function (window) {
    function createMarker() {
 
    }
-   var levelData = {
-      name: "Robot Romp",
-      number: 1,
-      speed: -3,
-      gameItems: {
-        type: "sawblade", x: 400, y, groundY,
-        type: "sawblade", x: 600, y: groundY,
-        type: "sawblade", x: 900, y: groundY,
-      }
+   var levelData = [
+  {
+    name: "Robot Romp",
+    number: 1,
+    speed: -3,
+    gameItems: [
+      { type: "sawblade", x: 400, y: groundY },
+      { type: "sawblade", x: 600, y: groundY },
+      { type: "sawblade", x: 900, y: groundY },
+    ],
+  },
+  {
+    name: "Robot Rampage",
+    number: 2,
+    speed: -3,
+    gameItems: [
+      { type: "sawblade", x: 400, y: groundY },
+      { type: "sawblade", x: 600, y: groundY },
+      { type: "sawblade", x: 900, y: groundY },
+    ],
+  },
+   { "type": "reward", "x": 2000, "y": groundY - 60},
+];
    }
     function startLevel() {
       // TODO 13 goes below here
-
+      var level = levelData[currentLevel];
+      var levelObjects = gameItems[levelObjects];
+      var firstGameItemObject = gameObjects[0];
+      var firstX = firstGameItemObject.x;
+      var firstY = firstGameItemObject.y;
+      var firstType = firstGameItemObject.type;
+      createSawBlade(firstX, firstY);
+      for (var i = 0; i < myArray.length; i++) {
+        var eachElement = myArray[i];
+      }
 
 
       //////////////////////////////////////////////
@@ -81,7 +104,6 @@ var runLevels = function (window) {
     }
     startLevel();
   };
-};
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (
