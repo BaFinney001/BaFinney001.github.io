@@ -21,7 +21,7 @@ var init = function (window) {
         
         // TODO 1 : Declare and initialize our variables
         var circle; // variable to hold a single circle when created
-        var circles; // variable to store all circles
+        var circles = []; // variable to store all circles
 
 
         // TODO 2 : Create a function that draws a circle 
@@ -41,7 +41,7 @@ var init = function (window) {
         // drawCircle(circles);
 
         // TODO 7 : Use a loop to create multiple circles
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 500; i++) {
             drawCircle();
         }
 
